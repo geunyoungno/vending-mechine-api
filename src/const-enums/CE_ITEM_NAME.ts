@@ -2,12 +2,12 @@
  * 상품 명
  * * COLA,cola: 콜라
  * * WATER,water: 물
- * * COFFIE,coffie: 커피
+ * * COFFEE,coffee: 커피
  */
 const CE_ITEM_NAME = {
   COLA: 'cola',
   WATER: 'water',
-  COFFIE: 'coffie',
+  COFFEE: 'coffee',
 } as const;
 
 export default CE_ITEM_NAME;

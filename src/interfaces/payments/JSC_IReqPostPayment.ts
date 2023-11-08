@@ -11,7 +11,7 @@ const JSC_IReqPostPayment: JSONSchema7 = {
       properties: {
         name: {
           type: 'string',
-          enum: ['cola', 'water', 'coffie'],
+          enum: ['cola', 'water', 'coffee'],
           description: '상품 명',
         },
         paymentMethod: {
@@ -22,24 +22,20 @@ const JSC_IReqPostPayment: JSONSchema7 = {
       },
       required: ['name', 'paymentMethod'],
     },
-    params: {
+    headers: {
       type: 'object',
       properties: {
-        name: {
+        'x-request-id': {
           type: 'string',
-          enum: ['cola', 'water', 'coffie'],
-          description: '상품 명',
-        },
-        paymentMethod: {
-          type: 'string',
-          enum: ['card', 'cash'],
-          description: '결제 방법법',
+          description: '요청 구분을 위한 id',
+          format: 'uuid',
+          examples: ['49c1e4d6-9bc5-4d66-9eb7-41715e2b62c5'],
         },
       },
-      required: ['name', 'paymentMethod'],
+      required: ['x-request-id'],
     },
   },
-  required: ['body', 'params'],
+  required: ['body', 'headers'],
   definitions: {},
 };
 

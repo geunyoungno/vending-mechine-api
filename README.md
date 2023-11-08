@@ -58,6 +58,11 @@ flowchart TD
     dispenseItem --> vendingMachineEnd
 ```
 
+## operateVendingMachine 함수에서 관련 내용 구현
+src/modules/operateVendingMachine.ts에서 flowchart에 따른 로직들을 확인하실 수 있습니다.
+
+`npm run test src/modules/__tests__/vending-machine.test.ts` 을 실행하여 동작을 확인하실 수 있습니다.
+
 # 서버 실행 방법
 1. `npm run dev-ts`로 서버를 실행 할 수 있습니다.
 

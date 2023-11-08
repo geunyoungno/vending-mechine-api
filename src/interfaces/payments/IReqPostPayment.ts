@@ -23,5 +23,5 @@ export interface IReqPostPaymentBody {
 
 export default interface IReqPostPayment {
   body: IReqPostPaymentBody;
-  params: IReqPostPaymentBody;
+  headers: IReqPostPaymentHeaders;
 }

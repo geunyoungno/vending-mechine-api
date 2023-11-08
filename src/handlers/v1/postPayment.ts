@@ -6,15 +6,14 @@ import mockupDispenseChange from '#mockups/mockupDispenseChange';
 import mockupDispenseItem from '#mockups/mockupDispenseItem';
 import selectItem from '#modules/items/selectItem';
 import executePayment from '#modules/payments/executePayment';
-import serializerChangeDto from '#serializers/serializerChangeDto';
-import serializerItemDto from '#serializers/serializerItemDto';
+import serializerResPostPayment from '#serializers/serializerPaymentDto';
 import type { FastifyInstance, FastifyRequest } from 'fastify';
 import type { IncomingMessage, Server, ServerResponse } from 'http';
 
 export async function postPaymentHandler(
   req: FastifyRequest<{
     Body: IReqPostPayment['body'];
-    Params: IReqPostPayment['params'];
+    Headers: IReqPostPayment['headers'];
   }>,
 ): Promise<IResPostPayment> {
   // 상품 조회
@@ -33,16 +32,11 @@ export async function postPaymentHandler(
   // 상품 배출
   await mockupDispenseItem({ itemEntity });
 
-  return {
-    item: serializerItemDto(itemEntity),
-    cash:
-      totalInsertedCash == null && changeMap == null
-        ? undefined
-        : {
-            depositAmount: totalInsertedCash,
-            change: changeMap == null ? undefined : serializerChangeDto(changeMap),
-          },
-  };
+  return serializerResPostPayment({
+    itemEntity,
+    totalInsertedCash,
+    changeMap,
+  });
 }
 
 export function postPaymentRoute(server: FastifyInstance<Server, IncomingMessage, ServerResponse>): void {

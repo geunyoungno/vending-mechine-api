@@ -8,7 +8,7 @@ const JSC_IResGetItem: JSONSchema7 = {
   properties: {
     name: {
       type: 'string',
-      enum: ['cola', 'water', 'coffie'],
+      enum: ['cola', 'water', 'coffee'],
     },
     price: {
       type: 'number',

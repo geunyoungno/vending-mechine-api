@@ -18,7 +18,7 @@ const mockupItemEntities = [
   },
   {
     id: '3',
-    name: CE_ITEM_NAME.COFFIE,
+    name: CE_ITEM_NAME.COFFEE,
     price: 700,
     quantity: 1,
   },

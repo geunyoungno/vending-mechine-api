@@ -23,7 +23,7 @@ const JSC_IReqGetItem: JSONSchema7 = {
       properties: {
         name: {
           type: 'string',
-          enum: ['cola', 'water', 'coffie'],
+          enum: ['cola', 'water', 'coffee'],
         },
       },
       required: ['name'],
