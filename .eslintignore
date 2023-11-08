@@ -8,3 +8,6 @@ jest.setup.js
 # testcase
 __test__/*
 __tests__/*
+
+# webpack
+webpack.config.js

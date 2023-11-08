@@ -65,5 +65,6 @@ src/modules/operateVendingMachine.ts에서 flowchart에 따른 로직들을 확�
 
 # 서버 실행 방법
 1. `npm run dev-ts`로 서버를 실행 할 수 있습니다.
+1.1. `npm run webpack:dev`, `npm run dev`로 javascript 서버를 실행 할 수 있습니다.
 
 2. http://localhost:8080/swagger.io 로 실행할 수 있는 API 확인할 수 있습니다.
